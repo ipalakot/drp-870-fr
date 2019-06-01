@@ -2,14 +2,12 @@ name: mydrupal8theme
 type: theme
 description: 'A cuddly theme that offers extra fluffiness.'
 core: 8.x
-
 #base theme: classy
 regions:
-  header: Header
-  content: Content
-  sidebar_first: Sidebar first
-  footer: Footer
-
+  header: 'Header'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  footer: 'Footer'
 libraries:
-# . mydrupal8theme/custom
-# - /global-styling
+ - custom/mydrupal8theme
+ - custom/mydrupal8theme/vendor/foundation
