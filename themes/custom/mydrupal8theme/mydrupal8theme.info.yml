@@ -11,5 +11,5 @@ regions:
   footer: Footer
 
 libraries:
-  . mydrupal8theme/custom
+# . mydrupal8theme/custom
 # - /global-styling
