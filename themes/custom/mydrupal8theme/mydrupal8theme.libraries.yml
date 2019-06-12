@@ -1,25 +1,28 @@
-#mydrupal8theme.libraries.yml
-#cuddly-slider:
-custom:
-  version: 1.x
+global-styling:
+  version: VERSION
   css:
+    base:
+      css/styles.css: {}
+      #css/base/elements.css: {}
+    layout:
+      css/colors.css: {}
     theme:
-      css/style.css: {}
-  js:
-    js/app.js: {}
+      css/styles.css: {}
+      #css/print.css: { media: print }
   dependencies:
     - core/jquery
 
 foundation:
-  version: 6.5.1
+  version:
   css:
-      theme:
-        vendor/foundation/css/app.css: {}
-        vendor/foundation/css/foundation.css: {}
-        vendor/foundation/css/foundation.min.css: {}
-
+    theme:
+      vendor/foundation/css/app.css: {}
+      vendor/foundation/css/foundation.css: {}
+      vendor/foundation/css/foundation.min.css: {}
   js:
     vendor/foundation/js/vendor/foundation.js: {}
+    vendor/foundation/js/vendor/foundation.min.js: {}
+    vendor/foundation/js/vendor/jquery.js: {}
     vendor/foundation/js/vendor/what-input.js: {}
     vendor/foundation/js/app.js: {}
   dependencies:

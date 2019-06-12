@@ -1,0 +1,84 @@
+{#
+/**
+* @file
+* Theme override to display a menu.
+*
+* Available variables:
+* - menu_name: The machine name of the menu.
+* - items: A nested list of menu items. Each menu item contains:
+*   - attributes: HTML attributes for the menu item.
+*   - below: The menu item child items.
+*   - title: The menu link title.
+*   - url: The menu link url, instance of \Drupal\Core\Url
+*   - localized_options: Menu link localized options.
+*   - is_expanded: TRUE if the link has visible children within the current
+*     menu tree.
+*   - is_collapsed: TRUE if the link has children within the current menu tree
+*     that are not currently visible.
+*   - in_active_trail: TRUE if the link is in the active trail.
+*/
+#}
+
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+  {{ menus.menu_links(items, attributes, 0) }}
+
+  {% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+
+      {#
+       Menu Horizontal / Bar Navigation
+      #}
+
+      <div class="top-bar-a"
+           <nav class="top-bar show-for-medium row">
+              {% if items %}
+              <ul class="dropdown menu" data-dropdown-menu>
+                {% for item in items %}
+                <li{{ item.attributes }}>
+                {{ link(item.title, item.url) }}
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </nav>
+      </div>
+
+       {#
+         Menu Off-Canva
+       #}
+
+        <nav class="off-canvas position-left" id="offCanvas" data-off-canvas>
+           <!-- Close button -->
+              <button class="close-button" aria-label="Close menu" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+              </button>
+
+            <!-- Menu -->
+
+                {% if items %}
+                  <ul class="vertical menu">
+                    {% for item in items %}
+                        <li{{ item.attributes }}>
+                          {{ link(item.title, item.url) }}
+                        </li>
+                     {% endfor %}
+                  </ul>
+                {% endif %}
+        </nav>
+
+    <!-- Your page content lives here -->
+      <div class="title-bar">
+        <div class="title-bar-left hide-for-medium">
+          <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+          <span class="title-bar-title">Le LaboGenre</span>
+        </div>
+        <div class="title-bar-right">
+          <button class="menu-icon" type="button" data-open="offCanvasRight"></button>
+        </div>
+      </div>
+{% endmacro %}
