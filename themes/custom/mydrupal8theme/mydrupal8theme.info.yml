@@ -19,8 +19,9 @@ package: Core
 # version: VERSION
 # core: 8.x
 libraries:
-  - mydrupal8theme/global-styling
-  - mydrupal8theme/foundation
+  - themedrupal8/global-styling
+  - themedrupal8/foundation
+
 regions:
   header: Header
   content: Content

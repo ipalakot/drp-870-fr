@@ -2,28 +2,39 @@ global-styling:
   version: VERSION
   css:
     base:
-      css/styles.css: {}
+      css/colors.css: {}
       #css/base/elements.css: {}
     layout:
       css/colors.css: {}
     theme:
-      css/styles.css: {}
+      css/colors.css: {}
       #css/print.css: { media: print }
+  js:
+    js/app.js: {}
   dependencies:
     - core/jquery
 
 foundation:
-  version:
+  version: 6.5.1
   css:
     theme:
       vendor/foundation/css/app.css: {}
-      vendor/foundation/css/foundation.css: {}
       vendor/foundation/css/foundation.min.css: {}
   js:
     vendor/foundation/js/vendor/foundation.js: {}
-    vendor/foundation/js/vendor/foundation.min.js: {}
-    vendor/foundation/js/vendor/jquery.js: {}
     vendor/foundation/js/vendor/what-input.js: {}
     vendor/foundation/js/app.js: {}
+  dependencies:
+    - core/jquery
+
+slick:
+  version: 1.8.1
+  css:
+    theme:
+      vendor/slick/slick.css: {}
+      vendor/slick/slick-theme.css: {}
+  js:
+    vendor/slick/slick.js: {}
+    vendor/slick/slick.min.js: {}
   dependencies:
     - core/jquery
