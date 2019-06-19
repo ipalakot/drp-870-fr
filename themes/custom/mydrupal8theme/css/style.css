@@ -9,7 +9,7 @@ body {
   width:50%;
   }
 
-.top-bar,
+.top-bar
 {
   color: #FFFFFF;
   background: #40A497;
@@ -44,5 +44,34 @@ body {
 
 /* Sliders */
     ul.single.item{
-    margin left : 0px !important}
+    margin-left : 0px !important}
 
+/* BODY */
+.h2, h2 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+  
+/*hide Icon from From Frontpage */
+.feed-icon{
+    display: none;
+}
+
+/*Footer*/
+#footer{
+    background-color: #222222;
+    color: #ffffff;
+}
+
+#footer li a{
+    color: #9d9d9d;
+}
+
+#footer ul ul{
+    margin-left:40px; 
+}
+#footer row ul{
+    margin-bottom: 5px;
+}
